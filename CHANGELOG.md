@@ -8,10 +8,12 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [1.1.1] — 2026-02-24
 
 ### Changed
+
 - `resistanceFactor` default `0.35 → 0.70` — doubles the effective destruction radius for all weapons
 - `maxDestroyChance` default `0.65 → 1.0` — blocks at the epicenter are now guaranteed to be destroyed
 
 ### Result
+
 | Weapon | Effective radius before | Effective radius after |
 |---|---|---|
 | Tank AP shell (~4) | ~1.4 blocks | ~2.8 blocks |
@@ -24,6 +26,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [1.1.0] — 2026-02-24
 
 ### Added
+
 - **Server-authoritative config** — config type changed from `COMMON` to `SERVER`
   - Stored in `serverconfig/scwarfarebridge-server.toml` on the server
   - Automatically synced to all connecting clients, clients cannot override it
@@ -33,6 +36,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Covers the case where AP/APFSDS shells hit reinforced blocks directly (no explosion fallback needed)
 
 ### Fixed
+
 - AP shells had no effect on reinforced blocks
   - Root cause: AP shells hitting hardness=-1 blocks fall to `causeExplode()` with a small radius (~3–5), which was below the old `minExplosionPower = 8.0` threshold
   - Fix: lowered `minExplosionPower` default from `8.0` to `3.0`
@@ -42,6 +46,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [1.0.0] — 2026-02-24
 
 ### Added
+
 - Initial release
 - Hooks into `ExplosionEvent.Detonate` to run a secondary damage pass on nearby SecurityCraft reinforced blocks
 - Destruction scales dynamically with explosion radius — heavy ordnance devastates, small arms have no effect

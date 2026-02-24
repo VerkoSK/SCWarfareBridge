@@ -97,20 +97,6 @@ cd SCWarfareBridge
 
 Output JAR will be in `build/libs/`.
 
-## Changelog
-
-### 1.1.1
-- Doubled destruction power: `resistanceFactor` `0.35 → 0.70`, `maxDestroyChance` `0.65 → 1.0` (guaranteed at epicenter)
-
-### 1.1.0
-- Config is now server-authoritative (`SERVER` type) — stored in `serverconfig/`, auto-synced to clients
-- Added Forge built-in update checker (notifies in mod list when a new version is available)
-- Fixed AP shells having no effect: lowered `minExplosionPower` default from `8.0` to `3.0`
-- Added direct-hit handler for AP/APFSDS shells via `ProjectileHitEvent.HitBlock`
-
-### 1.0.0
-- Initial release — SecurityCraft + Superb Warfare compatibility bridge with dynamic damage scaling
-
 ## License
 
 MIT
