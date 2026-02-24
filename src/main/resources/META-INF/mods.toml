@@ -33,3 +33,11 @@ mandatory = false
 versionRange = "[1.9.0,)"
 ordering = "NONE"
 side = "BOTH"
+
+# FTB Teams is optional - when present, nation members will be synced to FTB teams
+[[dependencies."${mod_id}"]]
+modId = "ftbteams"
+mandatory = false
+versionRange = "[*,)"
+ordering = "NONE"
+side = "BOTH"

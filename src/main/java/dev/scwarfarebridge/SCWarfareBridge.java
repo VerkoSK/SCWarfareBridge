@@ -2,12 +2,18 @@ package dev.scwarfarebridge;
 
 import dev.scwarfarebridge.config.BridgeConfig;
 import dev.scwarfarebridge.event.ExplosionHandler;
+import dev.scwarfarebridge.item.ModItems;
+import dev.scwarfarebridge.network.PacketHandler;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(SCWarfareBridge.MOD_ID)
 public class SCWarfareBridge {
@@ -16,17 +22,24 @@ public class SCWarfareBridge {
 
     @SuppressWarnings({"unchecked", "rawtypes"})
     public SCWarfareBridge() {
-        // SERVER type: stored in serverconfig/ on the server, auto-synced to all
-        // joining clients. Server values always override any local client defaults.
+        IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
+
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, BridgeConfig.SPEC);
+
+        // Register items
+        ModItems.register(modBus);
+
+        // Register network packets
+        PacketHandler.init();
 
         // Always register the explosion hook (HE shells, missiles, nukes, ...)
         MinecraftForge.EVENT_BUS.register(ExplosionHandler.class);
 
+        // Add Nation Passport to the Tools & Utilities creative tab
+        modBus.addListener(this::buildCreativeTab);
+
         // Dynamically register the SBW ProjectileHitEvent.HitBlock listener when
-        // Superb Warfare is present. This catches AP shells the moment they contact
-        // a reinforced block — before (or instead of) their small explosion fires.
-        // Zero compile-time dependency on SBW: we load the class by name at runtime.
+        // Superb Warfare is present.
         if (ModList.get().isLoaded("superbwarfare")) {
             try {
                 Class hitBlockClass = Class.forName(
@@ -37,6 +50,12 @@ public class SCWarfareBridge {
             } catch (ClassNotFoundException ignored) {
                 // Older SBW build without this event — explosion hook still covers it
             }
+        }
+    }
+
+    private void buildCreativeTab(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.NATION_PASSPORT);
         }
     }
 }
