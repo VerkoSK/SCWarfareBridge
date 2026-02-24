@@ -317,12 +317,12 @@ public class NationScreen extends Screen {
         if (myNation.isPresent()) {
             g.drawCenteredString(font, "§cYou are already in a nation.", cx + cw / 2, cy + ch / 2 - 5, 0xFFFF5555);
             g.drawCenteredString(font, "§7Leave your current nation first.", cx + cw / 2, cy + ch / 2 + 8, COLOR_SUBTEXT);
-            nameField.setVisible(false);
+            nameField.visible = false;
             createButton.visible = false;
             return;
         }
 
-        nameField.setVisible(true);
+        nameField.visible = true;
         createButton.visible = true;
 
         nameField.setX(cx);
