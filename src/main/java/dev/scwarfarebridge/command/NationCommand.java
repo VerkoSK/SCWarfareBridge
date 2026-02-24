@@ -253,7 +253,7 @@ public class NationCommand {
                 data.setPlayerRank(optNation.get().getId(), player.getUUID(), NationRank.OFFICER);
             }
         } else {
-            newRank = current == NationRank.OFFICER ? NationRank.RECRUIT : NationRank.RECRUIT;
+            newRank = NationRank.RECRUIT;
         }
         data.setPlayerRank(optNation.get().getId(), target.getUUID(), newRank);
         NationRank finalRank = newRank;

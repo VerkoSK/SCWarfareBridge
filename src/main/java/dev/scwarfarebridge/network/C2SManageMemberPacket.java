@@ -100,8 +100,8 @@ public class C2SManageMemberPacket {
                         return;
                     }
                     NationRank current = nation.getRank(msg.targetPlayerUUID);
-                    // OFFICER -> RECRUIT, RECRUIT stays RECRUIT
-                    NationRank demoted = current == NationRank.OFFICER ? NationRank.RECRUIT : NationRank.RECRUIT;
+                    // Any rank below LEADER demotes to RECRUIT
+                    NationRank demoted = NationRank.RECRUIT;
                     data.setPlayerRank(nation.getId(), msg.targetPlayerUUID, demoted);
                     sender.sendSystemMessage(Component.translatable("message.scwarfarebridge.rank_changed",
                             msg.targetPlayerUUID.toString(), demoted.getDisplayName()));
