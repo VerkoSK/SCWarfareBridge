@@ -16,9 +16,9 @@ public class BridgeConfig {
         MIN_EXPLOSION_POWER = builder
                 .comment(
                         "Minimum explosion radius required to damage SecurityCraft reinforced blocks.",
-                        "Explosions smaller than this (grenades, pistols, small charges) have zero effect.",
-                        "Default: 8.0  |  Range: 0.1 - 100.0")
-                .defineInRange("minExplosionPower", 8.0, 0.1, 100.0);
+                        "Explosions smaller than this (small grenades, pistols) have zero effect.",
+                        "Default: 3.0  |  Range: 0.1 - 100.0")
+                .defineInRange("minExplosionPower", 3.0, 0.1, 100.0);
 
         RESISTANCE_FACTOR = builder
                 .comment(
