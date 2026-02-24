@@ -1,0 +1,34 @@
+# Compiled files
+build/
+*.class
+*.jar
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+.metadata
+.vscode/
+
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Minecraft development
+run/
+run-data/
+logs/
+src/generated/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temp
+tmpclaude-*
