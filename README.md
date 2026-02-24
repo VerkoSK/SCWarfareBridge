@@ -1,4 +1,4 @@
-# SC Warfare Bridge
+# SC-SuperB Bridge
 
 A lightweight Minecraft Forge compatibility mod that lets military explosions from [Superb Warfare](https://github.com/Mercurows/SuperbWarfare) and all its addons damage [SecurityCraft](https://www.curseforge.com/minecraft/mc-mods/security-craft) reinforced blocks.
 
@@ -6,7 +6,7 @@ Drop a single `.jar` into your `mods/` folder — no modified versions of Securi
 
 ## How it works
 
-SecurityCraft reinforced blocks normally have `Float.MAX_VALUE` blast resistance, making them completely immune to all explosions. SC Warfare Bridge hooks into Forge's explosion event system and runs a secondary damage pass against nearby reinforced blocks based on the explosion's power.
+SecurityCraft reinforced blocks normally have `Float.MAX_VALUE` blast resistance, making them completely immune to all explosions. SC-SuperB Bridge hooks into Forge's explosion event system and runs a secondary damage pass against nearby reinforced blocks based on the explosion's power.
 
 **Destruction formula:**
 
@@ -74,7 +74,7 @@ The config is **server-authoritative**: it lives on the server and is automatica
 
 ## For mod developers
 
-SC Warfare Bridge exposes a public API that other mods can use for direct block-breaking (e.g., penetrating projectiles that bypass the explosion system):
+SC-SuperB Bridge exposes a public API that other mods can use for direct block-breaking (e.g., penetrating projectiles that bypass the explosion system):
 
 ```java
 import dev.scwarfarebridge.api.SCWarfareBridgeAPI;

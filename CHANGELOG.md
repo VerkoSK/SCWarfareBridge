@@ -1,7 +1,14 @@
-# Changelog
+# Changelog — SC-SuperB Bridge
 
-All notable changes to SC Warfare Bridge are documented here.
+All notable changes to SC-SuperB Bridge are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+---
+
+## [1.1.2] — 2026-02-24
+
+### Changed
+- Mod renamed from **SC Warfare Bridge** to **SC-SuperB Bridge**
 
 ---
 
