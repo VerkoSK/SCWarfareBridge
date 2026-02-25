@@ -12,9 +12,9 @@ import net.minecraftforge.fml.config.ModConfig;
 @Mod(SCWarfareBridge.MOD_ID)
 public class SCWarfareBridge {
 
-    public static final String MOD_ID = "scwarfarebridge";
+    public static final String MOD_ID = "sc-superb-bridge";
 
-    @SuppressWarnings({"unchecked", "rawtypes"})
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public SCWarfareBridge() {
         // SERVER type: stored in serverconfig/ on the server, auto-synced to all
         // joining clients. Server values always override any local client defaults.

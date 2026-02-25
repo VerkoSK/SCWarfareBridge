@@ -5,9 +5,21 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.1.3] — 2026-02-25
+
+### Changed
+
+- GitHub repository renamed from `SCWarfareBridge` to `SC-SuperB-Bridge`
+- `mod_id` changed from `scwarfarebridge` to `sc-superb-bridge`
+- Config file path changed: `scwarfarebridge-server.toml` → `sc-superb-bridge-server.toml`
+- All internal URLs updated to new repository name
+
+---
+
 ## [1.1.2] — 2026-02-24
 
 ### Changed
+
 - Mod renamed from **SC Warfare Bridge** to **SC-SuperB Bridge**
 
 ---
@@ -35,7 +47,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - **Server-authoritative config** — config type changed from `COMMON` to `SERVER`
-  - Stored in `serverconfig/scwarfarebridge-server.toml` on the server
+  - Stored in `serverconfig/sc-superb-bridge-server.toml` on the server
   - Automatically synced to all connecting clients, clients cannot override it
 - **Forge update checker** — `updateJSONURL` added to `mods.toml`, points to `update.json` on GitHub
   - Notifies in the mod list when a newer version is available

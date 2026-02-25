@@ -9,7 +9,7 @@ version = "${mod_version}"
 displayName = "${mod_name}"
 authors = "${mod_authors}"
 description = '''${mod_description}'''
-updateJSONURL = "https://raw.githubusercontent.com/VerkoSK/SCWarfareBridge/main/update.json"
+updateJSONURL = "https://raw.githubusercontent.com/VerkoSK/SC-SuperB-Bridge/main/update.json"
 
 [[dependencies."${mod_id}"]]
 modId = "forge"
